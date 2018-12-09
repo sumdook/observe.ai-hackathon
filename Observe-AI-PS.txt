@@ -1,0 +1,44 @@
+Observe.AI Hackathon!
+Develop a pseudo frontend webapp for image sharing. Your webapp should include features to add image, edit info, del image. Also provide feature to like and comment on the post.
+
+
+[Minimum requirement]
+
+— Implement a frontend in ReactJS/VueJS for the image sharing webapp.
+
+— Implement a feature to add and delete image.
+
+— Zip all your source code, executables, screenshots and upload.
+
+
+[Advanced]
+
+— Implement a feature to like the post and comment on it. Maintain # of likes and comments in a local frontend db.
+
+— Your webapp should be responsive, it should scale down for mobile screens and scale up for desktop.
+
+— Load default images provided in the API with their likes and timestamps.
+
+— Zip all your source code, executables, screenshots and upload.
+
+ 
+
+[Deliverables]
+
+— We expect a beautiful UI like Instagram web implemented in ReactJS or VueJS.
+
+— Please zip all your source code, deployment instructions, static assets etc and upload.
+
+— Please make sure that your code is well documented/commented. Write readable code.
+
+
+
+ 
+
+[Guide]
+
+Insta API: http://starlord.hackerearth.com/insta
+
+TechStack: ReactJS, VueJS.
+
+

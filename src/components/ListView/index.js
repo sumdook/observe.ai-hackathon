@@ -1,0 +1,23 @@
+import React from 'react'
+import ListCard from './card'
+import styled from 'styled-components'
+
+const ListViewWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 50px;
+`
+
+export default class ListView extends React.Component {
+  renderPhotos = () => {
+    const { photos } = this.props
+    return Object.keys(photos).map(key => (
+      <ListCard key={key} photo={photos[key]} />
+    ))
+  }
+
+  render() {
+    return <ListViewWrapper>{this.renderPhotos()}</ListViewWrapper>
+  }
+}
