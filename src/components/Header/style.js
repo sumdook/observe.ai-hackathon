@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 const HeaderWrapper = styled.div`
   height: 170px;
-  margin: 40px 0;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -23,33 +22,24 @@ const HeaderWrapper = styled.div`
       margin: 0;
     }
   }
-
-  .navIcon {
+  nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+  }
+  .icon {
     width: 25px;
-    margin: 20px 30px;
-    opacity: 0.4;
+    margin: 15px 0;
+    opacity: 0.3;
     transition: opacity 0.3s;
+    cursor: pointer;
 
     &:hover {
-      opacity: 1;
-    }
-    &:active {
-      opacity: 1;
-    }
-    @media (max-width: 753px) {
-      width: 25px;
-      margin: 20px 20px;
+      opacity: 0.8;
     }
   }
   .active {
-    img {
-      opacity: 1;
-    }
-  }
-
-  .home,
-  .search {
-    opacity: 0.3;
+    opacity: 1;
   }
 
   @media (max-width: 753px) {

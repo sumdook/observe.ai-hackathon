@@ -3,6 +3,7 @@ import {
   DISLIKE_POST,
   ADD_COMMENT,
   DELETE_POST,
+  ADD_POST,
 } from '../actions/types'
 export default function(state = {}, action) {
   var { payload } = action
@@ -28,6 +29,8 @@ export default function(state = {}, action) {
       }
       console.log({ ...state })
       return { ...state }
+    case ADD_POST:
+      return { ...state, [payload]: action.post }
     case DELETE_POST:
       delete state[payload]
       return { ...state }

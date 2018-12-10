@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
+import { Link } from 'gatsby'
 import { Avatar, Icon, Popconfirm } from 'antd'
 import { connect } from 'react-redux'
-
+import timeSince from '../../util/time'
 import * as actions from '../../actions'
 
+import ProfilePic from '../../images/profile_pic.jpg'
 import Comment from '../../images/chat.svg'
+
 import CardWrapper from './style'
+
+//Heavily styled card component. Made responsive using styled components
 class GridCard extends Component {
   handleDelete = () => {
     this.props.deletePost(this.props.photo.id)
@@ -15,23 +20,28 @@ class GridCard extends Component {
     const { Image, likes, liked, id } = this.props.photo
     return (
       <CardWrapper>
-        <div className="image">
+        <div
+          className="image"
+          onDoubleClick={() => {
+            liked ? dislikePost(id, likes - 1) : likePost(id, likes + 1)
+          }}
+        >
           <img src={Image} alt="" />
         </div>
         <div className="content">
           <div className="left">
-            <Avatar icon="user" size="large" style={{ margin: 20 }} />
+            <Avatar src={ProfilePic} size="large" style={{ margin: 20 }} />
             <div className="user_details">
-              <p className="userame">
+              <p className="username">
                 sumdook <br />
-                <span>7 hours ago</span>
+                <span>{timeSince(id)} ago</span>
               </p>
             </div>
           </div>
           <div className="right">
             <p>{likes} Likes</p>
             <Icon
-              className="icon"
+              className="icon heart"
               type="heart"
               style={{ fontSize: 25, color: `${liked ? '#ED4956' : ''}` }}
               theme={`${liked ? 'filled' : ''}`}
@@ -39,7 +49,9 @@ class GridCard extends Component {
                 liked ? dislikePost(id, likes - 1) : likePost(id, likes + 1)
               }}
             />
-            <img src={Comment} alt="comment" className="comment" />
+            <Link to={`/posts/${id}`}>
+              <img src={Comment} alt="comment" className="comment" />
+            </Link>
             <Popconfirm
               placement="bottom"
               title="Are you sure you want to delete this?"

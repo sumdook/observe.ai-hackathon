@@ -29,6 +29,11 @@ const CardWrapper = styled.div`
     margin: 10px;
     cursor: pointer;
   }
+  .heart {
+    opacity: 0.9;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
   .content {
     display: flex;
     justify-content: space-between;
@@ -44,6 +49,15 @@ const CardWrapper = styled.div`
 
         p {
           margin: 5px;
+        }
+        .username {
+          font-weight: bold;
+          font-size: 17px;
+          span {
+            font-weight: normal;
+            font-size: 16px;
+            opacity: 0.5;
+          }
         }
       }
     }

@@ -14,6 +14,10 @@ const CardWrapper = styled.div`
       opacity: 1;
     }
   }
+  .heart {
+    transition: all 0.3s;
+    cursor: pointer;
+  }
   .image {
     height: 700px;
     width: 700px;
@@ -45,8 +49,18 @@ const CardWrapper = styled.div`
       .user_details {
         display: flex;
         align-items: center;
+
         p {
           margin: 10px;
+        }
+        .username {
+          font-weight: bold;
+          font-size: 18px;
+          span {
+            font-weight: normal;
+            font-size: 16px;
+            opacity: 0.5;
+          }
         }
       }
       .icon {
@@ -68,21 +82,39 @@ const CardWrapper = styled.div`
       margin: 10px 20px;
       p {
         margin: 10px;
+        font-size: 16px;
+        span {
+          font-weight: bold;
+        }
       }
     }
 
     .caption {
       margin: 10px 30px;
+      font-size: 16px;
+      .username {
+        font-weight: bold;
+        font-size: 16px;
+        margin: 0 2px;
+      }
     }
 
     .comments {
-      flex-grow: 1;
       display: flex;
       flex-direction: column;
       margin: 10px 30px;
+      flex-grow: 1;
+      overflow: hidden;
+      overflow-y: scroll;
 
       p {
         margin: 2px 10px;
+        font-size: 17px;
+        span {
+          font-weight: bold;
+          font-size: 17px;
+          margin: 0 10px;
+        }
       }
     }
     .add_comment {
@@ -97,6 +129,55 @@ const CardWrapper = styled.div`
         opacity: 0.7;
         cursor: pointer;
       }
+    }
+  }
+
+  @media (max-width: 1400px) {
+    height: 500px;
+
+    .image {
+      height: 500px;
+      width: 500px;
+    }
+    .content {
+      height: 500px;
+      width: 300px;
+    }
+  }
+
+  @media (max-width: 1100px) {
+    height: 300px;
+
+    .image {
+      height: 300px;
+      width: 300px;
+    }
+
+    .content {
+      height: 300px;
+      width: 300px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    height: 50vh;
+    margin: 40px;
+    .image {
+      height: 300px;
+      width: 300px;
+    }
+
+    .content {
+      height: 450px;
+      width: 300px;
+    }
+    .input {
+      height: 100px;
+    }
+    .send {
+      width: 10px;
     }
   }
 `

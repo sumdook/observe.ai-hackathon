@@ -1,4 +1,10 @@
-import { LIKE_POST, DISLIKE_POST, ADD_COMMENT, DELETE_POST } from './types'
+import {
+  LIKE_POST,
+  DISLIKE_POST,
+  ADD_COMMENT,
+  DELETE_POST,
+  ADD_POST,
+} from './types'
 
 export const likePost = (id, likes) => {
   return { type: LIKE_POST, payload: id, likes }
@@ -15,4 +21,9 @@ export const addComment = (id, comment) => {
 
 export const deletePost = id => {
   return { type: DELETE_POST, payload: id }
+}
+
+export const addPost = (id, post) => {
+  console.log(post)
+  return { type: ADD_POST, payload: id, post }
 }

@@ -39,12 +39,14 @@ const SidebarWrapper = styled.div`
     @media (max-width: 753px) {
       margin: 15px;
       width: 40px;
+      display: none;
     }
   }
 
   @media (max-width: 753px) {
     justify-content: flex-end;
     margin: 0 20px 0 10px;
+    display: none;
   }
 `
 
