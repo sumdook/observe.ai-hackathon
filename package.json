@@ -5,7 +5,7 @@
   "author": "Soumik Sur",
   "dependencies": {
     "antd": "^3.10.3",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "babel-plugin-styled-components": "^1.9.2",
     "gatsby": "^2.0.53",
     "gatsby-image": "^2.0.20",
